@@ -25,3 +25,4 @@ dependencyResolutionManagement {
 rootProject.name = "Practice2"
 include(":app")
 include(":activitylifecycle")
+include(":multiactivity")
