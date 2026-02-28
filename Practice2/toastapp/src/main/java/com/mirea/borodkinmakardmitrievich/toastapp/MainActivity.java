@@ -1,6 +1,10 @@
 package com.mirea.borodkinmakardmitrievich.toastapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +13,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText editText;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +26,14 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        editText = (EditText) findViewById(R.id.editText);
+    }
+
+    public void onShowButtonClick(View view){
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "СТУДЕНТ №4 ГРУППА БСБО-08-23 Количество символов - " + editText.getText().toString().length(),
+                Toast.LENGTH_SHORT);
+        toast.show();
     }
 }
