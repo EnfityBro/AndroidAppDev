@@ -26,3 +26,4 @@ rootProject.name = "Practice1"
 include(":app")
 include(":layouttype")
 include(":controlpractice1")
+include(":buttonclicker")
